@@ -1,7 +1,7 @@
 import cv2 
 import numpy as np 
 
-video  = cv2.VideoCapture("green.mp4")
+video  = cv2.VideoCapture("dino.mp4")
 image = cv2.imread("bg.jpeg")
 
 while True:
@@ -11,10 +11,10 @@ while True:
     frame = cv2.resize(frame, (640, 480))
     image = cv2.resize(image, (640, 480))
 
-    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    
 
-    u_green = np.array([104, 153, 70])
-    l_green = np.array([30,30,0])
+    u_green = np.array([162,120,90])
+    l_green = np.array([122,0,0])
 
     mask = cv2.inRange(frame, l_green, u_green)
     res = cv2.bitwise_and(frame, frame, mask=mask)
